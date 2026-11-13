@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
-    <cache-path name="exports" path="/" />
+    <!-- Only the two folders Nudge shares from; the rest of the cache dir is not reachable through
+         the provider. qr/ = QrShare (QR key image), backup/ = BackupActions (rules export). -->
+    <cache-path name="exports" path="qr/" />
+    <cache-path name="backups" path="backup/" />
 </paths>

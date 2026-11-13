@@ -17,7 +17,7 @@ import java.io.IOException
  * way: the image leaves the device only through a target the user picks.
  *
  * The file goes through the app's ONE FileProvider (`${applicationId}.fileprovider`, whose
- * `cache-path` already covers the whole cache dir), under [SHARE_DIR]. A write or launch failure
+ * `file_paths.xml` exposes this qr/ folder), under [SHARE_DIR]. A write or launch failure
  * is a short toast, never a crash: the caller is a button, and a QR it cannot share is still on
  * screen.
  */

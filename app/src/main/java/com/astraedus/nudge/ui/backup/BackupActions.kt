@@ -188,7 +188,9 @@ private suspend fun writeJsonToUri(context: Context, uri: Uri, json: String): Bo
 /** Writes the backup to the cache dir (off the main thread) and offers it to the share sheet. */
 private suspend fun shareBackupJson(context: Context, json: String) {
     val uri = withContext(Dispatchers.IO) {
-        val file = File(context.cacheDir, backupFileName())
+        // backup/ is one of the two folders file_paths.xml exposes; never the cache root.
+        val dir = File(context.cacheDir, "backup").apply { mkdirs() }
+        val file = File(dir, backupFileName())
         file.writeText(json)
         FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
     }

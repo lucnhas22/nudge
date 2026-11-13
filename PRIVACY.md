@@ -32,6 +32,8 @@ For foreground detection, Nudge receives the **package name** of the active app.
 - **Element selection state** (e.g. which navigation tab is active)
 - **Specific navigation labels** (e.g. the text "Shorts") as a fallback when resource IDs aren't available
 
+- **The browser's address bar** (only when a rule blocks websites): the text of the URL field in supported browsers, to match the domain against your rules. Only the matching result is used; the address is not stored or logged.
+
 ### What it does NOT read
 
 - Arbitrary text on your screen (messages, posts, search queries)
